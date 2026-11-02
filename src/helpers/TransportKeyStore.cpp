@@ -1,5 +1,5 @@
 #include "TransportKeyStore.h"
-#include <SHA256.h>
+#include <Crypto/SHA256.h>
 
 uint16_t TransportKey::calcTransportCode(const mesh::Packet* packet) const {
   uint16_t code;

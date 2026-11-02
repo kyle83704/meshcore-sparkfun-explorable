@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
-#include <Mesh.h>
+#include "../../src/Mesh.h"
 
 /*------------ Frame Protocol --------------*/
 #define FIRMWARE_VER_CODE 14

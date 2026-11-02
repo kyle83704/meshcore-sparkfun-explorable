@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Mesh.h>
+#include "../../Mesh.h"
 #include <helpers/SensorManager.h>
 #include <helpers/sensors/LocationProvider.h>
 

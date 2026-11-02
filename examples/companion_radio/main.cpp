@@ -1,5 +1,5 @@
 #include <Arduino.h>   // needed for PlatformIO
-#include <Mesh.h>
+#include "../../src/Mesh.h"
 #include "MyMesh.h"
 
 // Believe it or not, this std C function is busted on some platforms!
@@ -101,6 +101,10 @@ MultiSerialInterface interface_manager;
 #elif defined(RP2040_PLATFORM)
   #include <LittleFS.h>
   DataStore store(LittleFS, rtc_clock);
+#elif defined(APOLLO3_PLATFORM)
+  #include <helpers/apollo3/Apollo3FileSystem.h>
+  Apollo3FileSystem companion_fs;
+  DataStore store(companion_fs, rtc_clock);
 #elif defined(ESP32)
   #include <SPIFFS.h>
   DataStore store(SPIFFS, rtc_clock);
@@ -175,6 +179,15 @@ void setup() {
   the_mesh.begin();
 #elif defined(RP2040_PLATFORM)
   LittleFS.begin();
+  store.begin();
+  the_mesh.begin();
+#elif defined(APOLLO3_PLATFORM)
+  int fs_status = companion_fs.begin();
+  if (fs_status != 0) {
+    Serial.print("ERROR: companion filesystem initialization failed: ");
+    Serial.println(fs_status);
+    halt();
+  }
   store.begin();
   the_mesh.begin();
 #elif defined(ESP32)

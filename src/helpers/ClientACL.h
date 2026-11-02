@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Arduino.h>   // needed for PlatformIO
-#include <Mesh.h>
+#include "../Mesh.h"
 #include <helpers/IdentityStore.h>
 
 #define PERM_ACL_ROLE_MASK     3   // lower 2 bits

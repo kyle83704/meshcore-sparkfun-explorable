@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Mesh.h>
+#include "../../Mesh.h"
 #include <RadioLib.h>
 
 #ifdef USE_CC310_HW_CRYPTO

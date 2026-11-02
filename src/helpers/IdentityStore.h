@@ -6,8 +6,10 @@
 #elif defined(NRF52_PLATFORM) || defined(STM32_PLATFORM)
   #include <Adafruit_LittleFS.h>
   #define FILESYSTEM  Adafruit_LittleFS
-
   using namespace Adafruit_LittleFS_Namespace;
+#elif defined(APOLLO3_PLATFORM)
+  #include <helpers/apollo3/Apollo3FileSystem.h>
+  #define FILESYSTEM Apollo3FileSystem
 #endif
 #include <Identity.h>
 

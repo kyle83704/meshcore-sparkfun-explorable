@@ -1,6 +1,6 @@
 #include "RegionMap.h"
 #include <helpers/TxtDataHelpers.h>
-#include <SHA256.h>
+#include <Crypto/SHA256.h>
 
 // helper class for region map exporter, we emulate Stream with a safe buffer writer.
 
@@ -290,10 +290,12 @@ void RegionMap::printChildRegions(int indent, const RegionEntry* parent, Stream&
     out.print(' ');
   }
 
+  out.print(skip_hash(parent->name));
+  out.print(parent->id == home_id ? "^" : "");
   if (parent->flags & REGION_DENY_FLOOD) {
-    out.printf("%s%s\n", skip_hash(parent->name), parent->id == home_id ? "^" : "");
+    out.println();
   } else {
-    out.printf("%s%s F\n", skip_hash(parent->name), parent->id == home_id ? "^" : "");
+    out.println(" F");
   }
 
   for (int i = 0; i < num_regions; i++) {

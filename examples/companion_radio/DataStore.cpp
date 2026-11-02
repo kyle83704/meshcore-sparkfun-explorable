@@ -35,7 +35,7 @@ static File openWrite(FILESYSTEM* fs, const char* filename) {
 #if defined(NRF52_PLATFORM) || defined(STM32_PLATFORM)
   fs->remove(filename);
   return fs->open(filename, FILE_O_WRITE);
-#elif defined(RP2040_PLATFORM)
+#elif defined(RP2040_PLATFORM) || defined(APOLLO3_PLATFORM)
   return fs->open(filename, "w");
 #else
   return fs->open(filename, "w", true);
@@ -47,7 +47,7 @@ static File openWrite(FILESYSTEM* fs, const char* filename) {
 #endif
 
 void DataStore::begin() {
-#if defined(RP2040_PLATFORM)
+#if defined(RP2040_PLATFORM) || defined(APOLLO3_PLATFORM)
   identity_store.begin();
 #endif
 
@@ -108,6 +108,8 @@ uint32_t DataStore::getStorageUsedKb() const {
   info.usedBytes = 0;
   _fs->info(info);
   return info.usedBytes / 1024;
+#elif defined(APOLLO3_PLATFORM)
+  return _fs->usedBytes() / 1024;
 #elif defined(NRF52_PLATFORM) || defined(STM32_PLATFORM)
   const lfs_config* config = _getContactsChannelsFS()->_getFS()->cfg;
   int usedBlockCount = _getLfsUsedBlockCount(_getContactsChannelsFS());
@@ -126,6 +128,8 @@ uint32_t DataStore::getStorageTotalKb() const {
   info.totalBytes = 0;
   _fs->info(info);
   return info.totalBytes / 1024;
+#elif defined(APOLLO3_PLATFORM)
+  return _fs->totalBytes() / 1024;
 #elif defined(NRF52_PLATFORM) || defined(STM32_PLATFORM)
   const lfs_config* config = _getContactsChannelsFS()->_getFS()->cfg;
   int totalBytes = config->block_size * config->block_count;
@@ -138,7 +142,7 @@ uint32_t DataStore::getStorageTotalKb() const {
 File DataStore::openRead(const char* filename) {
 #if defined(NRF52_PLATFORM) || defined(STM32_PLATFORM)
   return _fs->open(filename, FILE_O_READ);
-#elif defined(RP2040_PLATFORM)
+#elif defined(RP2040_PLATFORM) || defined(APOLLO3_PLATFORM)
   return _fs->open(filename, "r");
 #else
   return _fs->open(filename, "r", false);
@@ -148,7 +152,7 @@ File DataStore::openRead(const char* filename) {
 File DataStore::openRead(FILESYSTEM* fs, const char* filename) {
 #if defined(NRF52_PLATFORM) || defined(STM32_PLATFORM)
   return fs->open(filename, FILE_O_READ);
-#elif defined(RP2040_PLATFORM)
+#elif defined(RP2040_PLATFORM) || defined(APOLLO3_PLATFORM)
   return fs->open(filename, "r");
 #else
   return fs->open(filename, "r", false);
@@ -172,6 +176,8 @@ bool DataStore::formatFileSystem() {
   }
 #elif defined(RP2040_PLATFORM)
   return LittleFS.format();
+#elif defined(APOLLO3_PLATFORM)
+  return _fs->format();
 #elif defined(ESP32)
   bool fs_success = ((fs::SPIFFSFS *)_fs)->format();
   esp_err_t nvs_err = nvs_flash_erase(); // no need to reinit, will be done by reboot

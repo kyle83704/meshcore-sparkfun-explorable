@@ -4,7 +4,7 @@
 #ifdef ENABLE_WIFI_INTERFACE
 #include <WiFi.h>
 #endif
-#include <Mesh.h>
+#include "../../src/Mesh.h"
 
 #define CMD_APP_START                 1
 #define CMD_SEND_TXT_MSG              2
@@ -2413,12 +2413,15 @@ void MyMesh::checkSerialInterface() {
 }
 
 void MyMesh::loop() {
-  BaseChatMesh::loop();
-
   if (_cli_rescue) {
     checkCLIRescueCmd();
   } else {
     checkSerialInterface();
+  }
+
+  BaseChatMesh::loop();
+
+  if (!_cli_rescue) {
 #if defined(ENABLE_WIFI_INTERFACE) && defined(RP2040_PLATFORM) && !defined(ENABLE_USB_INTERFACE)
     // RP2040 WiFi builds are headless and have no way into the rescue CLI (that needs a
     // display + long-press), so serve config commands on the otherwise unused USB serial

@@ -1,3 +1,35 @@
+## Experimental SparkFun expLoRaBLE USB Companion port
+
+This repository includes an **unofficial, experimental** MeshCore USB
+Companion port for the SparkFun LoRa Thing Plus - expLoRaBLE (Apollo3 MCU,
+SX1262 radio, CH340 USB-serial bridge). It is intended for development and
+testing; it is not an official MeshCore target. This port exposes the USB
+Companion interface only and does not add Bluetooth Companion support.
+
+The Apollo3 target builds with PlatformIO Core 6 and the isolated
+`platformio.apollo3.ini` configuration. See the [SparkFun expLoRaBLE guide](./docs/sparkfun_explorable.md)
+for build and upload steps, the recorded test results, MeshPoint setup, and
+known limitations.
+
+Quick start from the project root (replace `COM6` with the board's upload
+port):
+
+```sh
+pio run -c platformio.apollo3.ini -e SparkFun_expLoRaBLE_companion_usb
+pio run -c platformio.apollo3.ini -e SparkFun_expLoRaBLE_companion_usb -t upload --upload-port COM6
+```
+
+Recorded tests include a successful Apollo3 build and upload, a successful
+stock MeshCore Python client connection over USB, and a MeshPoint v0.7.9
+integration run. Repeated cold starts, long-term reliability, and MeshCore
+over-the-air exchange with another node remain unverified. The radio values
+used during testing are not a universal regional preset or a statement of
+regulatory compliance.
+
+This port is based on the upstream [MeshCore project](https://github.com/meshcore-dev/meshcore),
+specifically the `companion-v1.18.0` source baseline. Upstream history and the
+existing MIT license and attribution are retained.
+
 ## About MeshCore
 
 MeshCore is a lightweight, portable C++ library that enables multi-hop packet routing for embedded projects using LoRa and other packet radios. It is designed for developers who want to create resilient, decentralized communication networks that work without the internet.
@@ -38,6 +70,7 @@ For developers:
 
 - Install [PlatformIO](https://docs.platformio.org) in [Visual Studio Code](https://code.visualstudio.com).
 - Clone and open the MeshCore repository in Visual Studio Code.
+- For the experimental SparkFun expLoRaBLE USB Companion target, see the [board build guide](./docs/sparkfun_explorable.md). It uses an isolated PlatformIO configuration with PlatformIO Core 6.
 - See the example applications you can modify and run:
   - [Companion Radio](./examples/companion_radio) - For use with an external chat app, over BLE, USB or Wi-Fi.
   - [KISS Modem](./examples/kiss_modem) - Serial KISS protocol bridge for host applications. ([protocol docs](./docs/kiss_modem_protocol.md))
