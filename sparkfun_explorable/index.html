@@ -27,7 +27,7 @@
     
     
       
-        <title>SparkFun LoRa Thing Plus - expLoRaBLE - MeshCore Docs</title>
+        <title>MeshCore on SparkFun LoRa Thing Plus - expLoRaBLE (Apollo3 / SX1262) - MeshCore Docs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sparkfun-lora-thing-plus-explorable" class="md-skip">
+        <a href="#meshcore-on-sparkfun-lora-thing-plus-explorable-apollo3-sx1262" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SparkFun LoRa Thing Plus - expLoRaBLE
+              MeshCore on SparkFun LoRa Thing Plus - expLoRaBLE (Apollo3 / SX1262)
             
           </span>
         </div>
@@ -566,7 +566,7 @@
   <span class="md-ellipsis">
     
   
-    SparkFun LoRa Thing Plus - expLoRaBLE
+    MeshCore on SparkFun LoRa Thing Plus - expLoRaBLE (Apollo3 / SX1262)
   
 
     
@@ -584,7 +584,7 @@
   <span class="md-ellipsis">
     
   
-    SparkFun LoRa Thing Plus - expLoRaBLE
+    MeshCore on SparkFun LoRa Thing Plus - expLoRaBLE (Apollo3 / SX1262)
   
 
     
@@ -608,6 +608,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#product-and-source-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product and source repositories
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#hardware-and-board-configuration" class="md-nav__link">
@@ -786,6 +797,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#product-and-source-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product and source repositories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hardware-and-board-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -898,15 +920,29 @@
   
 
 
-<h1 id="sparkfun-lora-thing-plus-explorable">SparkFun LoRa Thing Plus - expLoRaBLE</h1>
+<h1 id="meshcore-on-sparkfun-lora-thing-plus-explorable-apollo3-sx1262">MeshCore on SparkFun LoRa Thing Plus - expLoRaBLE (Apollo3 / SX1262)</h1>
 <p>This is an <strong>unofficial, experimental USB Companion port</strong> for the SparkFun
-LoRa Thing Plus - expLoRaBLE. It is based on upstream MeshCore firmware
-<code>companion-v1.18.0</code> and targets the board's Apollo3 MCU, SX1262 radio, and
-CH340 USB-serial bridge. It does not provide Bluetooth Companion support.</p>
+<a href="https://www.sparkfun.com/sparkfun-lora-thing-plus-explorable.html">LoRa Thing Plus - expLoRaBLE</a>,
+also called the expLoRaBLE Thing Plus. It is based on upstream MeshCore
+firmware <code>companion-v1.18.0</code> and targets the board's Ambiq Apollo3 MCU,
+Semtech SX1262 LoRa radio, and CH340 USB-serial bridge. It does not provide
+Bluetooth Companion support.</p>
 <p>The port is for development and testing, not a released or officially
 supported MeshCore target. The successful tests listed here are from recorded
 project runs; the build and hardware tests were not repeated while preparing
 these publication notes.</p>
+<h2 id="product-and-source-repositories">Product and source repositories</h2>
+<ul>
+<li>Product: <a href="https://www.sparkfun.com/sparkfun-lora-thing-plus-explorable.html">SparkFun LoRa Thing Plus - expLoRaBLE</a></li>
+<li>Board hardware and design files: <a href="https://github.com/sparkfun/SparkFun_LoRa_Thing_Plus_expLoRaBLE">sparkfun/SparkFun_LoRa_Thing_Plus_expLoRaBLE</a></li>
+<li>Apollo3 Arduino core/framework used by this build: <a href="https://github.com/sparkfun/Arduino_Apollo3">sparkfun/Arduino_Apollo3</a></li>
+<li>PlatformIO support for Apollo3 used by this build: <a href="https://github.com/nigelb/platform-apollo3blue">nigelb/platform-apollo3blue</a></li>
+<li>MeshCore upstream firmware: <a href="https://github.com/meshcore-dev/meshcore">meshcore-dev/meshcore</a></li>
+</ul>
+<p>The PlatformIO configuration pins the Apollo3 platform and Arduino framework
+to specific commits. These links identify their upstream repositories; see
+<a href="#dependencies-and-reproducible-build-preparation">Dependencies and reproducible build preparation</a>
+for the exact revisions used.</p>
 <h2 id="hardware-and-board-configuration">Hardware and board configuration</h2>
 <ul>
 <li>SparkFun LoRa Thing Plus - expLoRaBLE</li>
