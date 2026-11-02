@@ -1,0 +1,1195 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the open source MeshCore firmware">
+      
+      
+      
+        <link rel="canonical" href="https://meshcore-dev.github.io/meshcore/sparkfun_explorable/">
+      
+      
+        <link rel="prev" href="../radio_presets/">
+      
+      
+        <link rel="next" href="../stats_binary_frames/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>SparkFun LoRa Thing Plus - expLoRaBLE - MeshCore Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sparkfun-lora-thing-plus-explorable" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MeshCore Docs" class="md-header__button md-logo" aria-label="MeshCore Docs" data-md-component="logo">
+      
+  <img src="../_assets/meshcore.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MeshCore Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SparkFun LoRa Thing Plus - expLoRaBLE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/meshcore-dev/meshcore/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    meshcore-dev/meshcore
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MeshCore Docs" class="md-nav__button md-logo" aria-label="MeshCore Docs" data-md-component="logo">
+      
+  <img src="../_assets/meshcore.svg" alt="logo">
+
+    </a>
+    MeshCore Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/meshcore-dev/meshcore/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    meshcore-dev/meshcore
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../companion_protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Companion Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently Asked Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kiss_modem_protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MeshCore KISS Modem Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nrf52_power_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nRF52 Power Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../number_allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Allocations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packet_format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packet Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qr_codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QR Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radio_presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radio Presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SparkFun LoRa Thing Plus - expLoRaBLE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SparkFun LoRa Thing Plus - expLoRaBLE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-and-board-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware and board configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-changes-relative-to-upstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port changes relative to upstream
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies-and-reproducible-build-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies and reproducible build preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-and-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build and upload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-companion-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Companion verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-and-meshpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi and MeshPoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations-and-remaining-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations and remaining validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stats_binary_frames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stats Binary Frame Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal_chat_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terminal Chat CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-and-board-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware and board configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-changes-relative-to-upstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port changes relative to upstream
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies-and-reproducible-build-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies and reproducible build preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-and-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build and upload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-companion-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USB Companion verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-and-meshpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raspberry Pi and MeshPoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations-and-remaining-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations and remaining validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/meshcore-dev/meshcore/edit/main/docs/sparkfun_explorable.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="sparkfun-lora-thing-plus-explorable">SparkFun LoRa Thing Plus - expLoRaBLE</h1>
+<p>This is an <strong>unofficial, experimental USB Companion port</strong> for the SparkFun
+LoRa Thing Plus - expLoRaBLE. It is based on upstream MeshCore firmware
+<code>companion-v1.18.0</code> and targets the board's Apollo3 MCU, SX1262 radio, and
+CH340 USB-serial bridge. It does not provide Bluetooth Companion support.</p>
+<p>The port is for development and testing, not a released or officially
+supported MeshCore target. The successful tests listed here are from recorded
+project runs; the build and hardware tests were not repeated while preparing
+these publication notes.</p>
+<h2 id="hardware-and-board-configuration">Hardware and board configuration</h2>
+<ul>
+<li>SparkFun LoRa Thing Plus - expLoRaBLE</li>
+<li>Apollo3 MCU; SX1262 radio; CH340 USB-serial bridge</li>
+<li>Radio uses SPI1 with NSS 36, DIO1 40, reset 44, and BUSY 39</li>
+<li>USB Companion serial: 115200 baud, 8N1, no flow control</li>
+<li>The RTS solder jumper was visually inspected and found open</li>
+</ul>
+<p>The board adapter initializes its I2C bus, exposes the SparkFun model name,
+and supplies the SX1262 wiring to the RadioLib wrapper. Apollo3 settings and
+filesystem integration are confined to the new board variant and
+<code>APOLLO3_PLATFORM</code> build path. The current build settings are 915.0 MHz,
+250 kHz bandwidth, SF10, coding-rate setting 5, and 20 dBm transmit power.
+These are the values reported in the recorded runtime test, not a universal
+regional preset or evidence of regulatory compliance.</p>
+<h2 id="port-changes-relative-to-upstream">Port changes relative to upstream</h2>
+<p>The source snapshot matches upstream tag <code>companion-v1.18.0</code> (commit
+<code>7d6d255104eadbfccd85ceae4ccbc14133946f7e</code>). The upstream history and
+<code>license.txt</code> are retained. The port changes are:</p>
+<ul>
+<li>Added <code>platformio.apollo3.ini</code>, <code>scripts/apollo3_compat.py</code>,
+  <code>src/helpers/apollo3/Apollo3FileSystem.h</code>, and
+  <code>variants/sparkfun_explorable/{SparkFunExplorableBoard.cpp,SparkFunExplorableBoard.h,target.cpp,target.h}</code>.</li>
+<li>Added Apollo3 filesystem setup in <code>examples/companion_radio/main.cpp</code>,
+  Apollo3 file modes and capacity reporting in
+  <code>examples/companion_radio/DataStore.cpp</code> and
+  <code>src/helpers/IdentityStore.cpp</code>, and Apollo3 filesystem selection in
+  <code>src/helpers/IdentityStore.h</code>.</li>
+<li>Changed <code>examples/companion_radio/MyMesh.cpp</code> and <code>MyMesh.h</code> and
+  <code>examples/companion_radio/main.cpp</code> to use source-relative MeshCore includes
+  for the PlatformIO target. In <code>MyMesh::loop()</code>, serial handling now runs
+  before <code>BaseChatMesh::loop()</code>. This is a candidate behavior change shared by
+  Companion builds; the test record does not isolate it as the cause of the
+  earlier startup-handshake failures.</li>
+<li>Changed shared helper includes to source-relative paths in
+  <code>src/Mesh.h</code>, <code>src/helpers/AbstractBridge.h</code>,
+  <code>src/helpers/AdvertDataHelpers.h</code>, <code>src/helpers/ArduinoHelpers.h</code>,
+  <code>src/helpers/AutoDiscoverRTCClock.h</code>, <code>src/helpers/BaseChatMesh.h</code>,
+  <code>src/helpers/ChannelDetails.h</code>, <code>src/helpers/ClientACL.h</code>,
+  <code>src/helpers/CommonCLI.h</code>, <code>src/helpers/ContactInfo.h</code>,
+  <code>src/helpers/SimpleMeshTables.h</code>, <code>src/helpers/StatsFormatHelper.h</code>,
+  <code>src/helpers/radiolib/RadioLibWrappers.h</code>,
+  <code>src/helpers/sensors/EnvironmentSensorManager.h</code>, and
+  <code>src/helpers/sensors/LocationProvider.h</code>.</li>
+<li>Changed Crypto include paths in <code>src/Packet.cpp</code>, <code>src/Utils.cpp</code>,
+  <code>src/helpers/RegionMap.cpp</code>, and <code>src/helpers/TransportKeyStore.cpp</code>.
+  The <code>RegionMap.cpp</code> output rewrite preserves the existing text format while
+  avoiding a <code>printf</code> call unsupported by the Apollo3 stream implementation.</li>
+</ul>
+<p>The helper changes above are shared source files, not a separate fork of their
+behavior. Apollo3-specific file operations are guarded by
+<code>APOLLO3_PLATFORM</code>; the stream-format rewrite emits the same text on existing
+targets. The target build below validates the Apollo3 path, but no full
+cross-board test matrix is claimed.</p>
+<h2 id="dependencies-and-reproducible-build-preparation">Dependencies and reproducible build preparation</h2>
+<p>Use PlatformIO Core <strong>6.2.0</strong>. The Apollo3 platform and framework are pinned to
+the revisions used for the recorded build; direct PlatformIO library
+dependencies are version-pinned in <code>platformio.apollo3.ini</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Revision used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>platform-apollo3blue</code></td>
+<td><code>a4872991c2746c7e1d775cc2bfc5bdf3da0beb89</code></td>
+</tr>
+<tr>
+<td>SparkFun <code>framework-arduinoapollo3</code></td>
+<td><code>771ce8fe14b54425775bb48c777709bf28eb9100</code> (2.2.0)</td>
+</tr>
+<tr>
+<td>RadioLib</td>
+<td><code>6d8934836678d8894e3d556550475b37dce3e2b6</code> (7.7.1)</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td>Adafruit BusIO</td>
+<td>1.17.4</td>
+</tr>
+<tr>
+<td>RTClib</td>
+<td>2.1.4</td>
+</tr>
+<tr>
+<td>Melopero RV3028</td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td>CayenneLPP</td>
+<td>1.6.1</td>
+</tr>
+<tr>
+<td>base64</td>
+<td>1.4.0</td>
+</tr>
+<tr>
+<td>ArduinoJson</td>
+<td>7.4.3</td>
+</tr>
+<tr>
+<td>Apollo3 ARM toolchain</td>
+<td>1.90201.191206</td>
+</tr>
+</tbody>
+</table>
+<p><code>SPI</code> and <code>Wire</code> come from the Arduino framework. PlatformIO downloads the
+pinned platform, framework, and library packages into its package storage;
+the build does not require hand-copied variant files or a pre-existing
+project <code>.pio</code> cache. The SparkFun board definition comes from the pinned
+Apollo3 platform package. The corresponding <code>LoRa_THING_PLUS_expLoRaBLE</code>
+variant, including its Mbed support files, comes from the pinned Arduino
+Apollo3 framework package. PlatformIO creates object files and other build
+outputs under <code>.pio</code>; those generated files are not project source and are
+not to be committed.</p>
+<p>Before each build, <code>scripts/apollo3_compat.py</code> checks the freshly resolved
+Adafruit BusIO source and applies the required Apollo3 <code>uint8_t</code> overload
+cast to its I2C probe call. The edit is confined to PlatformIO's downloaded
+library copy, is safe to repeat, and fails the build if the expected source is
+missing or has an unrecognized implementation. This makes the compatibility
+adjustment explicit rather than relying on a previously patched <code>.pio</code> copy.</p>
+<h2 id="build-and-upload">Build and upload</h2>
+<p>From the project root, build the USB Companion environment:</p>
+<pre><code class="language-sh">pio run -c platformio.apollo3.ini -e SparkFun_expLoRaBLE_companion_usb
+</code></pre>
+<p>To upload, connect the board and use its SVL bootloader. Replace <code>COM6</code> with
+the board's serial port on your system:</p>
+<pre><code class="language-sh">pio run -c platformio.apollo3.ini -e SparkFun_expLoRaBLE_companion_usb -t upload --upload-port COM6
+</code></pre>
+<p>On Linux, use the actual device path, for example <code>/dev/ttyUSB0</code>. Follow the
+board/bootloader instructions if the SVL uploader asks for bootloader mode.
+No firmware image is included in this source project.</p>
+<p>Recorded build result with PlatformIO Core 6.2.0:</p>
+<ul>
+<li>RAM: 125,584 / 393,216 bytes</li>
+<li>Flash: 318,132 / 843,776 bytes</li>
+<li>The configured upload protocol is <code>svl</code>.</li>
+</ul>
+<p>The installed Apollo3 framework reserves the final 128 KiB of internal flash
+for LittleFS and keeps the final EEPROM-emulation page reserved. The image
+limit in this environment is 843,776 bytes.</p>
+<h2 id="usb-companion-verification">USB Companion verification</h2>
+<p>The USB connection uses the binary MeshCore Companion protocol; it is not a
+text CLI or KISS modem. The stock client opens the serial port at 115200 baud
+and sends <code>CMD_APP_START</code> (<code>0x01</code>). A successful startup returns a framed
+<code>SELF_INFO</code> response (<code>0x05</code>). The normal client handshake succeeded without
+an added delay or monkey patch in a recorded Raspberry Pi test.</p>
+<p>Recorded verification:</p>
+<ul>
+<li>A direct serial test after flashing received a complete <code>SELF_INFO</code> on
+  three consecutive immediate opens, in approximately 0.10-0.11 seconds per
+  open. An earlier five-open sample had one incomplete response, so this is
+  not enough to establish reliable repeated-open behavior.</li>
+<li>The unmodified MeshCore Python client connected on its first attempt without
+  an added delay or monkey patch.</li>
+<li>Runtime <code>SELF_INFO</code> reported 915.0 MHz, 250 kHz bandwidth, SF10, coding-rate
+  setting 5, and 20 dBm transmit power.</li>
+<li>MeshPoint v0.7.9 identified firmware v1.18.0 as SparkFun expLoRaBLE,
+  reported <code>MT=True MC=True</code>, and logged <code>MeshCore advert sent: command_ok</code>.
+  <code>command_ok</code> confirms command acceptance, not reception by another node.</li>
+</ul>
+<p>Earlier failing tests and a candidate firmware loop-order change were not
+isolated from the separate MeshPoint serial-source configuration conflict.
+An early raw test also observed a lone <code>fe</code> byte whose cause remains unknown.
+Do not treat either observation as proof of a reset or of the root cause of
+the initial handshake failure.</p>
+<h2 id="raspberry-pi-and-meshpoint">Raspberry Pi and MeshPoint</h2>
+<p>Use a stable serial path when available, such as a <code>/dev/serial/by-id/</code> link,
+and make sure only one process owns the USB serial port. A recorded CH340
+device appeared as <code>/dev/ttyUSB0</code>. Linux device names are case-sensitive.</p>
+<p>The following is a <strong>partial example</strong> to merge into the existing MeshPoint
+configuration; it is not a replacement for the entire configuration:</p>
+<pre><code class="language-yaml">capture:
+  sources:
+    - concentrator
+    - meshcore_usb
+  concentrator_spi_device: /dev/spidev0.0
+  meshcore_usb:
+    serial_port: /dev/ttyUSB0
+    baud_rate: 115200
+    auto_detect: false
+</code></pre>
+<p>Do not also configure a Meshtastic serial source on the same <code>/dev/ttyUSB0</code>
+device. One recorded MeshPoint failure was resolved by removing that duplicate
+serial assignment; it was a separate configuration issue from the firmware
+handshake behavior.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li><strong>Port opens but no Companion response:</strong> confirm the selected device is the
+  CH340 adapter, the baud rate is 115200, and no other application owns the
+  port. Check that the client sends the Companion <code>CMD_APP_START</code> packet; a
+  LoRa frequency change cannot fix a serial framing or port-selection issue.
+  The successful stock-client test needed no added startup delay.</li>
+<li><strong>MeshPoint reports <code>MC=False</code> or fails after opening the port:</strong> check for
+  a competing serial source in MeshPoint's configuration, restart MeshPoint
+  after editing the config, and review its serial logs.</li>
+<li><strong>Upload does not start:</strong> use the configured SVL protocol, the correct
+  serial port, and the board's documented bootloader procedure.</li>
+<li><strong>No messages from other LoRa nodes:</strong> verify compatible regional
+  configuration and antenna/radio setup. Another node's traffic or an
+  accepted advertisement command does not prove that this board has exchanged
+  MeshCore packets over the air.</li>
+</ul>
+<h2 id="known-limitations-and-remaining-validation">Known limitations and remaining validation</h2>
+<ul>
+<li>No over-the-air exchange with another MeshCore node has been verified.</li>
+<li>Repeated cold starts, repeated stock-client opens as an acceptance series,
+  and long-term reliability remain unverified.</li>
+<li>MeshPoint's successful application integration was recorded, but repeated
+  MeshPoint starts and its normal DTR/recovery behavior have not been
+  independently validated here.</li>
+<li>The effect of moving Companion serial handling before radio/mesh processing
+  was not isolated as the cause of the initial startup issue.</li>
+<li>The cause of the early lone <code>fe</code> byte is unknown.</li>
+<li>This is a USB-only Companion port; Bluetooth Companion support is not
+  implemented or tested.</li>
+<li>The tested radio settings are not a regional preset or a regulatory
+  compliance determination.</li>
+</ul>
+<p>Before treating the port as reliable, repeat the stock-client connection over
+multiple opens without delays or monkey patches, test a separately recorded
+cold power-up, exercise MeshPoint through restart/recovery, and verify
+two-way over-the-air MeshCore traffic with another node.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.action.edit", "content.code.copy", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
