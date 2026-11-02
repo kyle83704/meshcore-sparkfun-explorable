@@ -1,14 +1,29 @@
-# SparkFun LoRa Thing Plus - expLoRaBLE
+# MeshCore on SparkFun LoRa Thing Plus - expLoRaBLE (Apollo3 / SX1262)
 
 This is an **unofficial, experimental USB Companion port** for the SparkFun
-LoRa Thing Plus - expLoRaBLE. It is based on upstream MeshCore firmware
-`companion-v1.18.0` and targets the board's Apollo3 MCU, SX1262 radio, and
-CH340 USB-serial bridge. It does not provide Bluetooth Companion support.
+[LoRa Thing Plus - expLoRaBLE](https://www.sparkfun.com/sparkfun-lora-thing-plus-explorable.html),
+also called the expLoRaBLE Thing Plus. It is based on upstream MeshCore
+firmware `companion-v1.18.0` and targets the board's Ambiq Apollo3 MCU,
+Semtech SX1262 LoRa radio, and CH340 USB-serial bridge. It does not provide
+Bluetooth Companion support.
 
 The port is for development and testing, not a released or officially
 supported MeshCore target. The successful tests listed here are from recorded
 project runs; the build and hardware tests were not repeated while preparing
 these publication notes.
+
+## Product and source repositories
+
+- Product: [SparkFun LoRa Thing Plus - expLoRaBLE](https://www.sparkfun.com/sparkfun-lora-thing-plus-explorable.html)
+- Board hardware and design files: [sparkfun/SparkFun_LoRa_Thing_Plus_expLoRaBLE](https://github.com/sparkfun/SparkFun_LoRa_Thing_Plus_expLoRaBLE)
+- Apollo3 Arduino core/framework used by this build: [sparkfun/Arduino_Apollo3](https://github.com/sparkfun/Arduino_Apollo3)
+- PlatformIO support for Apollo3 used by this build: [nigelb/platform-apollo3blue](https://github.com/nigelb/platform-apollo3blue)
+- MeshCore upstream firmware: [meshcore-dev/meshcore](https://github.com/meshcore-dev/meshcore)
+
+The PlatformIO configuration pins the Apollo3 platform and Arduino framework
+to specific commits. These links identify their upstream repositories; see
+[Dependencies and reproducible build preparation](#dependencies-and-reproducible-build-preparation)
+for the exact revisions used.
 
 ## Hardware and board configuration
 

@@ -1,6 +1,6 @@
 #include "Utils.h"
-#include <Crypto/AES.h>
-#include <Crypto/SHA256.h>
+#include <AES.h>
+#include <SHA256.h>
 
 #ifdef USE_CC310_HW_CRYPTO
 #include <Adafruit_nRFCrypto.h>

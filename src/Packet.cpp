@@ -1,6 +1,6 @@
 #include "Packet.h"
 #include <string.h>
-#include <Crypto/SHA256.h>
+#include <SHA256.h>
 
 namespace mesh {
 
