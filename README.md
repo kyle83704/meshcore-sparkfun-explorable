@@ -7,6 +7,7 @@ also known as the SparkFun expLoRaBLE Thing Plus. It is an Apollo3 LoRa board
 with a Semtech SX1262 transceiver and CH340 USB-serial bridge. This port is for
 development and testing, is not an official MeshCore target, and exposes USB
 Companion only (not Bluetooth Companion).
+
 <img width="447" height="447" alt="lorathing2" src="https://github.com/user-attachments/assets/d14de322-d314-470f-a5a4-710e876250a0" />
 <img width="225" height="225" alt="lorathing1" src="https://github.com/user-attachments/assets/51e77278-ccff-4690-93d7-cb6a458226da" />
 <img width="447" height="447" alt="lorathing3" src="https://github.com/user-attachments/assets/44a45c39-9946-424a-8b12-8a250795f606" />
